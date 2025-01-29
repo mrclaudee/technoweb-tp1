@@ -11,6 +11,9 @@ http.createServer((req, res) => {
             let data = parse(body);
             console.log("Données envoyées à l'URL : " + req.url);
             console.log(data);
+            res.writeHead(200, {
+                'Content-type': 'text/html',
+            });
             res.write('Data du formulaire : ' + JSON.stringify(data));
             res.end();
         });
